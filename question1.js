@@ -64,10 +64,21 @@ const shoppingList = [
 
 
     function filterHealthy(shoppingList){
-        return shoppingList.filter(consumables => consumables.isHealthy===true)
+        return shoppingList.filter(consumables => consumables.isHealthy==true)
+    }
+
+    function distributeBooks(names,books){
+                 let toReturn = {}
+          for(let [name,book] of names.entries()){
+                toReturn[book] = books[name];
+          }       
+          return toReturn;
     }
 
     console.log(filterHealthy(shoppingList))
+    const names1 = ["marv","ay"]
+    const books = ["money ","food"]
+    console.log(distributeBooks(names1,books))
 let funds={ "groceries": 150, "dining out": 100, "transportation": 50, "entertainment": 80 }
 console.log(filterExpenses(funds))
 console.log(isAfternoon(class_timings))
